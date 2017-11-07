@@ -33,7 +33,8 @@ module.exports = {
 		User.findById(req.params.id, (err, user) => {
 			Object.assign(user, req.body)
 			user.save((err, updatedUser) => {
-				res.json({success: true, message: "User updated.", user})
+				const token = signToken(updatedUser)
+				res.json({success: true, message: "User updated.", token})
 			})
 		})
 	},

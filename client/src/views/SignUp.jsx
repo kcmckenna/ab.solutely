@@ -7,7 +7,7 @@ import clientAuth from '../clientAuth'
 
 class SignUp extends React.Component {
 	state = {
-		fields: { name: '', email: '', password: ''}
+		fields: { name: '', email: '', password: '' }
 	}
 
 	onInputChange(evt) {
@@ -38,10 +38,10 @@ class SignUp extends React.Component {
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 					<input type="text" placeholder="Name" name="name" value={name} />
 					<input type="text" placeholder="Email" name="email" value={email} />
-					{/* <input type="textfield" placeholder="About" name="about" value={about} /> */}
+					{/*<input type="textfield" placeholder="About" name="about" value={about} /> */}
 					{/* <input type="text" placeholder="Type" name="type" value={userType} /> */ }
 					<input type="password" placeholder="Password" name="password" value={password} />
-					<button>Log In</button>
+					<button>Join Now</button>
 				</form>
 			</div>
 		)

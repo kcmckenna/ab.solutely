@@ -11,7 +11,7 @@ const TypeA = (props) => {
 			<h1>Type A</h1>
 			<h2>Welcome {props.currentUser.name}</h2>
 			<DatePicker hintText="Landscape Dialog" mode="landscape" />
-			<FloatingActionButton style={style}>
+			<FloatingActionButton >
 				<ContentAdd />
 			</FloatingActionButton>
 		</div>
@@ -19,3 +19,5 @@ const TypeA = (props) => {
 }
 
 export default TypeA
+
+

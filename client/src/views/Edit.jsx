@@ -35,7 +35,7 @@ class EditProfile extends React.Component {
             if (user) {
                 console.log(user)
                 this.props.onUpdateSuccess(user)
-                this.props.history.push('/profile')
+				this.props.history.push('/profile')
             }
         })
     }
@@ -46,9 +46,9 @@ class EditProfile extends React.Component {
 			<div className='EditProfile'>
 				<h2>Edit Profile</h2>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-                    <div>Name</div><input type="text" placeholder={this.props.currentUser.name} name="name" defaultValue={name} /> 
-					<div>Email</div><input type="text" placeholder={this.props.currentUser.email} name="email" defaultValue={email} />
-					<div>Password</div><input type="password" placeholder={this.props.currentUser.password} name="password" defaultValue={password} />
+                    <div>Name</div><input type="text" placeholder="Name" name="name" defaultValue={name} /> 
+					<div>Email</div><input type="text" placeholder="Email" name="email" defaultValue={email} />
+					<div>Password</div><input type="password" placeholder="Password" name="password" defaultValue={password} />
 					<button>Update</button>
 				</form>
 			</div>

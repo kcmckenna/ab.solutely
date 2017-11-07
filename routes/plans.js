@@ -21,7 +21,8 @@ module.exports = plansRouter
 
 // albumsRouter.route('/:id')
 // .post((req, res) => {
-//     Album.findById(req.params.id).populate('artist').exec ((err, album) => {
-//         res.json(album)
+//     Plans.findById(req.params.id).populate('user').exec ((err, plans) => {
+//         if(err) return res.json({success: false, message: "invalid plan", err})
+//         res.json(plan)
 //     })
 // })

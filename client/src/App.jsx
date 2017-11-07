@@ -10,6 +10,8 @@ import Show from './views/Show'
 import Home from './views/Home'
 import EditProfile from './views/Edit'
 import DeleteProfile from './views/Delete'
+import TypeA from './views/TypeA'
+import TypeB from './views/TypeB'
 
 
 class App extends React.Component {
@@ -67,6 +69,10 @@ class App extends React.Component {
 							? <DeleteProfile currentUser={currentUser} onDeleteSuccess={this.LogOut.bind(this)}/>
 							: <Redirect to="/login" />
 					}} />	
+
+					{/* <Route path="" render={(props) => {
+
+					}} /> */}
 
 					<Route path="/" component={Home} />
 

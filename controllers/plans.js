@@ -13,13 +13,15 @@ module.exports = {
     show: (req, res) => {
         console.log("Current Event:")
         console.log(req.plan)
-        Plan.findById(req.params.id, (err, user) => {
-            res.json(plan)
+            Plans.findById(req.params.id).populate('user').exec ((err, plans) => {
+                if(err) return res.json({success: false, message: "invalid plan", err})
+                res.json(plan)
         })
     },
 
     // Create a new Event/Plan
     create: (req, res) => {
+        var newUserPlan
         Plan.create(req.body, (err, plan) => {
             if(err) return res.json({success: false, code: err.code})
             // event/plan is created
