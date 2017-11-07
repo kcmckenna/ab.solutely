@@ -8,8 +8,21 @@ a, button {
 	cursor: pointer;
 }
 
-h1 {
+.AB {
 	font-family: 'Megrim', cursive;
+	color: rgb(82, 108, 124);
+	font-size: 72px;
+}
+
+.period {
+	font-family: 'Megrim', cursive;
+	color: rgb(166, 186, 197);
+	font-size: 172px;
+}
+
+.solutely {
+	font-family: 'Megrim', cursive;
+	color: rgb(72, 179, 236);
 	font-size: 72px;
 }
 

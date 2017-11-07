@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import AppBar from 'material-ui/AppBar'
+import RaisedButton from 'material-ui/RaisedButton';
 
 const NavBar = (props) => {
 	return (
@@ -9,6 +12,7 @@ const NavBar = (props) => {
 			<AppBar
 			title="Title"
 			iconClassNameRight="muidocs-icon-navigation-expand-more"/>
+			<RaisedButton label="Primary" primary={true} />
 				<Link to="/">Home</Link>
 				{props.currentUser
 					? (
