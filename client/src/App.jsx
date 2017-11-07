@@ -1,13 +1,16 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import clientAuth from './clientAuth'
+import clientAuth from './clientAuth.js'
 
 import NavBar from './NavBar'
 import LogIn from './views/LogIn'
 import LogOut from './views/LogOut'
 import SignUp from './views/SignUp'
-import VIP from './views/VIP'
+import Show from './views/Show'
 import Home from './views/Home'
+import EditProfile from './views/Edit'
+import DeleteProfile from './views/Delete'
+
 
 class App extends React.Component {
 	state = { currentUser: null }
@@ -47,11 +50,23 @@ class App extends React.Component {
 						return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
 					}} />
 
-					<Route path="/vip" render={() => {
+					<Route path="/profile" render={() => {
 						return currentUser
-							? <VIP />
+							? <Show currentUser={currentUser} />
 							: <Redirect to="/login" />
 					}} />
+
+					<Route path="/edit" render={(props) => {
+						return currentUser
+							? <EditProfile {...props} currentUser={currentUser} onUpdateSuccess={this.onLoginSuccess.bind(this)}/>
+							: <Redirect to="/login" />
+					}} />
+
+					<Route path="/delete" render={(props) => {
+						return currentUser
+							? <DeleteProfile currentUser={currentUser} onDeleteSuccess={this.LogOut.bind(this)}/>
+							: <Redirect to="/login" />
+					}} />	
 
 					<Route path="/" component={Home} />
 
