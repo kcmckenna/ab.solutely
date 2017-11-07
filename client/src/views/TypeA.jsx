@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Show = (props) => {
+const TypeA = (props) => {
 	return (
-		<div className='Show'>
-			<h1>ab.solutely</h1>
+		<div className='TypeA'>
+			<h1>Type A</h1>
 			<h2>Welcome {props.currentUser.name}</h2>
-			<h3>{props.currentUser.about}</h3>
 		</div>
 	)
 }
 
-export default Show
+export default TypeA

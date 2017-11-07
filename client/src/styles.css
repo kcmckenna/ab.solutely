@@ -1,4 +1,5 @@
 body {
+	font-family: 'Megrim', cursive;
 	padding: 20px;
 }
 
@@ -7,6 +8,15 @@ a, button {
 	cursor: pointer;
 }
 
+h1 {
+	font-family: 'Megrim', cursive;
+	font-size: 72px;
+}
+
 .NavBar {
 	margin-bottom: 20px
+}
+
+div {
+	font-family: 'Raleway', sans-serif;
 }
