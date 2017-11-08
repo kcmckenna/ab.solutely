@@ -4,19 +4,24 @@ import clientAuth from './clientAuth.js'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import AppBar from 'material-ui/AppBar'
-
-import NavBar from './NavBar'
-import LogIn from './views/LogIn'
-import LogOut from './views/LogOut'
-import SignUp from './views/SignUp'
-import Show from './views/Show'
-import Home from './views/Home'
-import EditProfile from './views/Edit'
-import DeleteProfile from './views/Delete'
-import TypeA from './views/TypeA'
-import TypeB from './views/TypeB'
-
-import MakePlan from './views/MakePlan'
+//////////////// JOINING ////////////////////
+import NavBar from './NavBar.jsx'
+import Home from './views/Home.jsx'
+import LogIn from './views/Users/LogIn.jsx'
+import LogOut from './views/Users/LogOut.jsx'
+import SignUp from './views/Users/SignUp.jsx'
+//////////////// USERS ////////////////////
+import Show from './views/Users/Show.jsx'
+import EditProfile from './views/Users/Edit.jsx'
+import DeleteProfile from './views/Users/Delete.jsx'
+//////////////// TYPES ////////////////////
+import TypeA from './views/TypeA.jsx'
+import TypeB from './views/TypeB.jsx'
+//////////////// EVENTS ////////////////////
+import MakePlan from './views/Plans/MakePlan.jsx'
+import ShowPlans from './views/Plans/ShowPlans.jsx'
+import EditPlan from './views/Plas/EditPlan.jsx'
+import DeletePlan from './views/Plans/DeletePlan.jsx'
 
 
 class App extends React.Component {
@@ -46,22 +51,27 @@ class App extends React.Component {
 		return (
 			<MuiThemeProvider >
 				<div className='App'>
-					
 					<NavBar currentUser={currentUser} />
-
 					<Switch>
-
 						<Route path="/login" render={(props) => {
-							return <LogIn {...props} onLoginSuccess={this.onLoginSuccess.bind(this)} />
+							return <LogIn 
+								{...props} 
+								onLoginSuccess={this.onLoginSuccess.bind(this)} />
 						}} />
 
 						<Route path="/logout" render={(props) => {
-							return <LogOut onLogOut={this.logOut.bind(this)} />
+							return <LogOut 
+								onLogOut={this.logOut.bind(this)} />
 						}} />
 
-						{/* the sign up component takes an 'onSignUpSuccess' prop which will perform the same thing as onLoginSuccess: set the state to contain the currentUser */}
+							{/* Sign Up component takes an 'onSignUpSuccess' prop 
+							which will perform the same thing as onLoginSuccess: 
+							set the state to contain the currentUser */}
+
 						<Route path="/signup" render={(props) => {
-							return <SignUp {...props} onSignUpSuccess={this.onLoginSuccess.bind(this)} />
+							return <SignUp 
+								{...props} 
+								onSignUpSuccess={this.onLoginSuccess.bind(this)} />
 						}} />
 
 						<Route path="/profile" render={() => {
@@ -82,15 +92,44 @@ class App extends React.Component {
 
 						<Route path="/delete" render={(props) => {
 							return currentUser
-								? <DeleteProfile currentUser={currentUser} onDeleteSuccess={this.logOut.bind(this)} />
+								? <DeleteProfile 
+									currentUser={currentUser} 
+									onDeleteSuccess={this.logOut.bind(this)} />
 								: <Redirect to="/login" />
 						}} />	
 
+						{/* Route Paths for the events/plans made */}
+
 						<Route path="/plans" render={() => {
 							return currentUser
-								? <MakePlan currentUser={currentUser} />
+								? <ShowPlans 
+									currentUser={currentUser} />
 								: <Redirect to="/login" />
 						}} />
+
+						<Route path="/makeplan" render={() => {
+							return currentUser
+								? <MakePlan 
+									currentUser={currentUser} />
+								: <Redirect to="/login" />
+						}} />
+
+						<Route path="/editplan" render={() => {
+							return currentUser
+								? <EditPlan 
+									currentUser={currentUser} 
+									onUpdateSuccess={this.onLoginSuccess.bind(this)}
+									onUpdatePlan={this.onUpdatePlan.bind(this)} />
+								: <Redirect to="/login" />
+						}} />
+
+						<Route path="/deleteplan" render={(props) => {
+							return currentUser
+								? <DeletePlan 
+									currentUser={currentUser} 
+									onDeleteSuccess={this.logOut.bind(this)} />
+								: <Redirect to="/login" />
+						}} />	
 
 						<Route path="/" component={Home} />
 

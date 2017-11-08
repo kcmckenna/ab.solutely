@@ -1,5 +1,5 @@
-import React from 'react'
-import clientAuth from '../clientAuth'
+import React from 'react';
+import clientAuth from '../clientAuth';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';

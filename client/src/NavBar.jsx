@@ -21,7 +21,12 @@ const NavBar = (props) => {
 							<Link to="/profile">Profile</Link>
 							<Link to="/edit">Edit</Link>
 							<Link to="/delete">Delete</Link>
+							<RaisedButton backgroundColor="#449EE3" label="SOMETHING" />
 							<Link to="/plans">Plans</Link>
+							<Link to="/makeplan">Make Plan</Link>
+							<Link to="/editplan">Edit Plan</Link>
+							<Link to="/deleteplan">Delete Plan</Link>
+							<RaisedButton backgroundColor="#449EE3" label="SOMETHING" />
 							<Link to="/logout">Log Out</Link>
 						</span>
 					)
