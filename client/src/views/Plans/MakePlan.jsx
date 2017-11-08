@@ -1,5 +1,6 @@
 import React from 'react';
-import clientAuth from '../clientAuth';
+import clientAuth from '../../clientAuth';
+import axios from 'axios'
 
 class MakePlan extends React.Component {
 	state = {
@@ -47,10 +48,10 @@ class MakePlan extends React.Component {
 				<h1>Create Event</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 					<input type="text" placeholder="Title" name="title" value={title} />
-					<input type="text" placeholder="Time Start" name="timestart" value={timeStart} />
-                    <input type="text" placeholder="Time End" name="timeend" value={timeEnd} />
-                    <input type="text" placeholder="Date Start" name="datestart" value={dateStart} />
-                    <input type="text" placeholder="Date End" name="dateend" value={dateEnd} />
+					<input type="number" placeholder="Time Start" name="timeStart" value={timeStart} />
+                    <input type="number" placeholder="Time End" name="timeEnd" value={timeEnd} />
+                    <input type="number" placeholder="Date Start" name="dateStart" value={dateStart} />
+                    <input type="number" placeholder="Date End" name="dateEnd" value={dateEnd} />
 					<button>Make Event</button>
 				</form>
 			</div>

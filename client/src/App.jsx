@@ -20,7 +20,7 @@ import TypeB from './views/TypeB.jsx'
 //////////////// EVENTS ////////////////////
 import MakePlan from './views/Plans/MakePlan.jsx'
 import ShowPlans from './views/Plans/ShowPlans.jsx'
-import EditPlan from './views/Plas/EditPlan.jsx'
+import EditPlan from './views/Plans/EditPlan.jsx'
 import DeletePlan from './views/Plans/DeletePlan.jsx'
 
 
@@ -119,7 +119,8 @@ class App extends React.Component {
 								? <EditPlan 
 									currentUser={currentUser} 
 									onUpdateSuccess={this.onLoginSuccess.bind(this)}
-									onUpdatePlan={this.onUpdatePlan.bind(this)} />
+									/* onUpdatePlan={this.onUpdatePlan.bind(this)}  */
+								/>
 								: <Redirect to="/login" />
 						}} />
 
