@@ -1,11 +1,17 @@
 import React from 'react';
 import clientAuth from '../../clientAuth';
-import axios from 'axios'
+import axios from 'axios';
+////////////// MATERIAL-UI IMPORTS ///////////////////
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class MakePlan extends React.Component {
 	state = {
 		fields: { 
-            title: '', 
+			title: '', 
+			place: '',
             timeStart: '', 
             timeEnd: '', 
             dateStart: '', 
@@ -27,7 +33,8 @@ class MakePlan extends React.Component {
 		clientAuth.signUp(this.state.fields).then(user => {
             this.setState({ 
                 fields: { 
-                    title: '', 
+					title: '', 
+					place: '',
                     timeStart: '', 
                     timeEnd: '', 
                     dateStart: '', 
@@ -42,12 +49,13 @@ class MakePlan extends React.Component {
 	}
 	
 	render() {
-		const { title, timeStart, timeEnd, dateStart, dateEnd } = this.state.fields
+		const { title, place, timeStart, timeEnd, dateStart, dateEnd } = this.state.fields
 		return (
 			<div className='MakePlan'>
 				<h1>Create Event</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 					<input type="text" placeholder="Title" name="title" value={title} />
+					<input type="text" placeholder="Place" name="place" value={place} />
 					<input type="number" placeholder="Time Start" name="timeStart" value={timeStart} />
                     <input type="number" placeholder="Time End" name="timeEnd" value={timeEnd} />
                     <input type="number" placeholder="Date Start" name="dateStart" value={dateStart} />

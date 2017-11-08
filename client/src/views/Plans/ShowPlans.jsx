@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';

@@ -1,9 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import AppBar from 'material-ui/AppBar'
+import React from 'react';
+import { Link } from 'react-router-dom';
+////////////// MATERIAL-UI IMPORTS ///////////////////
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
 
 const NavBar = (props) => {
 	return (

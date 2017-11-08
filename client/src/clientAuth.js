@@ -1,5 +1,5 @@
-import axios from 'axios'
-import jwtDecode from 'jwt-decode'
+import axios from 'axios';
+import jwtDecode from 'jwt-decode';
 
 const clientAuth = axios.create()
 clientAuth.defaults.headers.common.token = getToken()

@@ -8,8 +8,46 @@ const
 	MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/react-express-jwt',
 	PORT = process.env.PORT || 3001,
 	usersRoutes = require('./routes/users.js'),
-	plansRoutes = require('./routes/plans')
+	plansRoutes = require('./routes/plans'),
+	yelp = require('yelp-fusion'),
+	clientId = process.env.YELP_CLIENT_ID
+	clientSecret = process.env.YELP_API_KEY
 
+
+var theToken = null
+	
+const token = yelp.accessToken(clientId, clientSecret).then(response => {
+	 console.log(response.jsonBody.access_token)
+	 theToken = response.jsonBody.access_token
+   }).catch(e => {
+	 console.log(e)
+   })
+   
+
+app.get('/apitest/:term/:city', (req, res) => {
+	const client = yelp.client(theToken)
+	client.search({
+		term: req.params.term,
+		location: req.params.city
+	  }).then(response => {
+		console.log(response.jsonBody.businesses)
+		res.json(response.jsonBody)
+	  }).catch(e => {
+		console.log(e);
+	  });
+})
+
+app.get('/api-autocomplete/:term', (req, res) => {
+	const client = yelp.client(theToken)
+	client.autocomplete({
+		text: req.params.term
+	  }).then(response => {
+		console.log(response.jsonBody.terms[0].text);
+		res.json(response.jsonBody)
+	  }).catch(e => {
+		console.log(e);
+	  });
+})
 
 mongoose.connect(MONGODB_URI, (err) => {
 	console.log(err || `Connected to MongoDB.`)

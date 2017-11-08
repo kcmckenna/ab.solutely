@@ -1,5 +1,3 @@
-const
-
 /////////////////////////// GET ACCESS TOKEN
 
 'use strict';

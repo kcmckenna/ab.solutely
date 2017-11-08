@@ -1,6 +1,6 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom'
-import axios from 'axios'
+import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';

@@ -17,12 +17,3 @@ plansRouter.route('/:id')
     .delete(plansCtrl.destroy)
 
 module.exports = plansRouter
-
-
-// albumsRouter.route('/:id')
-// .post((req, res) => {
-//     Plans.findById(req.params.id).populate('user').exec ((err, plans) => {
-//         if(err) return res.json({success: false, message: "invalid plan", err})
-//         res.json(plan)
-//     })
-// })

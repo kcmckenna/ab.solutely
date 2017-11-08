@@ -2,7 +2,8 @@ const
     mongoose = require('mongoose'),
     bcrypt = require('bcrypt-nodejs'),
     planSchema = new mongoose.Schema({
-        title: { type: String, require: true },
+        title: { type: String },
+        place: { type: String },
         ID_user: { type: String },
         ID_event: { type: String },
         timeStart: { type: String },

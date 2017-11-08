@@ -1,27 +1,32 @@
-import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
-import clientAuth from './clientAuth.js'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import AppBar from 'material-ui/AppBar'
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import clientAuth from './clientAuth.js';
+////////////// MATERIAL-UI IMPORTS ///////////////////
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 //////////////// JOINING ////////////////////
-import NavBar from './NavBar.jsx'
-import Home from './views/Home.jsx'
-import LogIn from './views/Users/LogIn.jsx'
-import LogOut from './views/Users/LogOut.jsx'
-import SignUp from './views/Users/SignUp.jsx'
+import NavBar from './NavBar.jsx';
+import Home from './views/Home.jsx';
+import LogIn from './views/Users/LogIn.jsx';
+import LogOut from './views/Users/LogOut.jsx';
+import SignUp from './views/Users/SignUp.jsx';
 //////////////// USERS ////////////////////
-import Show from './views/Users/Show.jsx'
-import EditProfile from './views/Users/Edit.jsx'
-import DeleteProfile from './views/Users/Delete.jsx'
+import Show from './views/Users/Show.jsx';
+import EditProfile from './views/Users/Edit.jsx';
+import DeleteProfile from './views/Users/Delete.jsx';
 //////////////// TYPES ////////////////////
-import TypeA from './views/TypeA.jsx'
-import TypeB from './views/TypeB.jsx'
+import TypeA from './views/TypeA.jsx';
+import TypeB from './views/TypeB.jsx';
 //////////////// EVENTS ////////////////////
-import MakePlan from './views/Plans/MakePlan.jsx'
-import ShowPlans from './views/Plans/ShowPlans.jsx'
-import EditPlan from './views/Plans/EditPlan.jsx'
-import DeletePlan from './views/Plans/DeletePlan.jsx'
+import MakePlan from './views/Plans/MakePlan.jsx';
+import ShowPlans from './views/Plans/ShowPlans.jsx';
+import EditPlan from './views/Plans/EditPlan.jsx';
+import DeletePlan from './views/Plans/DeletePlan.jsx';
 
 
 class App extends React.Component {
@@ -133,9 +138,7 @@ class App extends React.Component {
 						}} />	
 
 						<Route path="/" component={Home} />
-
 					</Switch>
-					
 				</div>
 			</MuiThemeProvider>
 		)

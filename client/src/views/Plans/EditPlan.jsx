@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
 import clientAuth from '../../clientAuth';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import Divider from 'material-ui/Divider';
@@ -10,7 +10,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 class EditPlan extends React.Component {
 	state = {
 		fields: { 
-            title: '', 
+			title: '', 
+			place: '',
             timeStart: '', 
             timeEnd: '', 
             dateStart: '', 
@@ -32,7 +33,8 @@ class EditPlan extends React.Component {
 		clientAuth.signUp(this.state.fields).then(user => {
             this.setState({ 
                 fields: { 
-                    title: '', 
+					title: '', 
+					place: '',
                     timeStart: '', 
                     timeEnd: '', 
                     dateStart: '', 
@@ -47,12 +49,13 @@ class EditPlan extends React.Component {
 	}
 	
 	render() {
-		const { title, timeStart, timeEnd, dateStart, dateEnd } = this.state.fields
+		const { title, place, timeStart, timeEnd, dateStart, dateEnd } = this.state.fields
 		return (
 			<div className='EditPlan'>
 				<h1>Edit an Event</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 					<input type="text" placeholder="Title" name="title" value={title} />
+					<input type="text" placeholder="Place" name="place" value={place} />
 					<input type="text" placeholder="Time Start" name="timestart" value={timeStart} />
                     <input type="text" placeholder="Time End" name="timeend" value={timeEnd} />
                     <input type="text" placeholder="Date Start" name="datestart" value={dateStart} />
