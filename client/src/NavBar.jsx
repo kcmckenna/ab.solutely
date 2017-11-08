@@ -10,9 +10,10 @@ const NavBar = (props) => {
 		<div className='NavBar'>
 
 			<AppBar
-			title="Title"
+			title="ab.solutely" 
+			backgroundColor="#449EE3"
 			iconClassNameRight="muidocs-icon-navigation-expand-more"/>
-			<RaisedButton label="Primary" primary={true} />
+			<RaisedButton backgroundColor="#449EE3" label="SOMETHING" />
 				<Link to="/">Home</Link>
 				{props.currentUser
 					? (

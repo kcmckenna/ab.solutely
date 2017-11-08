@@ -2,7 +2,7 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
-class Delete extends React.Component {
+class DeleteProfile extends React.Component {
 
     componentDidMount() {
         axios({
@@ -20,4 +20,4 @@ class Delete extends React.Component {
     }
 }
 
-export default Delete
+export default DeleteProfile

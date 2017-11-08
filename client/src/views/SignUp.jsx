@@ -1,5 +1,9 @@
 import React from 'react'
 import clientAuth from '../clientAuth'
+import Divider from 'material-ui/Divider';
+import Paper from 'material-ui/Paper';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
 // Sign up form behaves almost identically to log in form. 
 // We could create a flexible Form component to use for both actions, 
@@ -20,6 +24,7 @@ class SignUp extends React.Component {
 	}
 
 	onFormSubmit(evt) {
+		
 		evt.preventDefault()
 		clientAuth.signUp(this.state.fields).then(user => {
 			this.setState({ fields: { name: '', email: '', password: '' } })
@@ -33,17 +38,23 @@ class SignUp extends React.Component {
 	render() {
 		const { name, email, password } = this.state.fields
 		return (
-			<div className='SignUp'>
-				<h1>Sign Up</h1>
-				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-					<input type="text" placeholder="Name" name="name" value={name} />
-					<input type="text" placeholder="Email" name="email" value={email} />
-					{/*<input type="textfield" placeholder="About" name="about" value={about} /> */}
-					{/* <input type="text" placeholder="Type" name="type" value={userType} /> */ }
-					<input type="password" placeholder="Password" name="password" value={password} />
+			<Paper zDepth={2}>
+			 	<div className='SignUp'>
+					<h2>Sign Up</h2>
+					<Divider />	
+					<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
+						<input type="text" placeholder="Name" name="name" value={name} />
+					<Divider />
+						<input type="text" placeholder="Email" name="email" value={email} />	
+					<Divider />
+						<input type="password" placeholder="Password" name="password" value={password} />
+					<Divider />
+					<RaisedButton backgroundColor="#449EE3" label="SIGN UP"  />
 					<button>Join Now</button>
-				</form>
-			</div>
+					<Divider />
+					</form>
+				</div>
+			</Paper>
 		)
 	}
 }

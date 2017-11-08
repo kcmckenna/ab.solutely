@@ -34,7 +34,7 @@ module.exports = {
 			Object.assign(user, req.body)
 			user.save((err, updatedUser) => {
 				const token = signToken(updatedUser)
-				res.json({success: true, message: "User updated.", token})
+				res.json({success: true, message: "User updated.", token, userData:updatedUser})
 			})
 		})
 	},
