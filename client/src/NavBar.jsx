@@ -21,6 +21,7 @@ const NavBar = (props) => {
 							<Link to="/profile">Profile</Link>
 							<Link to="/edit">Edit</Link>
 							<Link to="/delete">Delete</Link>
+							<Link to="/plans">Plans</Link>
 							<Link to="/logout">Log Out</Link>
 						</span>
 					)

@@ -16,6 +16,8 @@ import DeleteProfile from './views/Delete'
 import TypeA from './views/TypeA'
 import TypeB from './views/TypeB'
 
+import MakePlan from './views/MakePlan'
+
 
 class App extends React.Component {
 	state = { currentUser: null }
@@ -64,10 +66,7 @@ class App extends React.Component {
 
 						<Route path="/profile" render={() => {
 							return currentUser
-								? <Show 
-									currentUser={currentUser} 
-
-								/>
+								? <Show currentUser={currentUser} />
 								: <Redirect to="/login" />
 						}} />
 
@@ -87,9 +86,11 @@ class App extends React.Component {
 								: <Redirect to="/login" />
 						}} />	
 
-						{/* <Route path="" render={(props) => {
-
-						}} /> */}
+						<Route path="/plans" render={() => {
+							return currentUser
+								? <MakePlan currentUser={currentUser} />
+								: <Redirect to="/login" />
+						}} />
 
 						<Route path="/" component={Home} />
 

@@ -42,15 +42,15 @@ class SignUp extends React.Component {
 			 	<div className='SignUp'>
 					<h2>Sign Up</h2>
 					<Divider />	
-					<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-						<input type="text" placeholder="Name" name="name" value={name} />
-					<Divider />
-						<input type="text" placeholder="Email" name="email" value={email} />	
-					<Divider />
-						<input type="password" placeholder="Password" name="password" value={password} />
-					<Divider />
-					<RaisedButton backgroundColor="#449EE3" label="SIGN UP"  />
-					<button>Join Now</button>
+						<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
+							<input type="text" placeholder="Name" name="name" value={name} />
+							<Divider />
+							<input type="text" placeholder="Email" name="email" value={email} />	
+							<Divider />
+							<input type="password" placeholder="Password" name="password" value={password} />
+							<Divider />
+						<RaisedButton backgroundColor="#449EE3" label="SIGN UP"  />
+						<button>Join Now</button>
 					<Divider />
 					</form>
 				</div>

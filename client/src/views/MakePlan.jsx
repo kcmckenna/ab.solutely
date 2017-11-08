@@ -8,8 +8,7 @@ class MakePlan extends React.Component {
             timeStart: '', 
             timeEnd: '', 
             dateStart: '', 
-            dateEnd: '', 
-            user:''
+            dateEnd: ''
         }
 	}
 
@@ -31,22 +30,21 @@ class MakePlan extends React.Component {
                     timeStart: '', 
                     timeEnd: '', 
                     dateStart: '', 
-                    dateEnd: '', 
-                    user:''
+                    dateEnd: ''
                 } 
             })
 			if(user) {
-				this.props.onSignUpSuccess(user)
-				this.props.history.push('/')
+				// this.props.onSignUpSuccess(user)
+				// this.props.history.push('/')
 			}
 		})
 	}
 	
 	render() {
-		const { name, email, password } = this.state.fields
+		const { title, timeStart, timeEnd, dateStart, dateEnd } = this.state.fields
 		return (
 			<div className='MakePlan'>
-				<h1>Sign Up</h1>
+				<h1>Create Event</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 					<input type="text" placeholder="Title" name="title" value={title} />
 					<input type="text" placeholder="Time Start" name="timestart" value={timeStart} />
@@ -60,4 +58,4 @@ class MakePlan extends React.Component {
 	}
 }
 
-export default SignUp
+export default MakePlan

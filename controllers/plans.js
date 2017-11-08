@@ -14,14 +14,14 @@ module.exports = {
         console.log("Current Event:")
         console.log(req.plan)
             Plans.findById(req.params.id).populate('user').exec ((err, plans) => {
-                if(err) return res.json({success: false, message: "invalid plan", err})
+                if(err) return res.json({success: false, message: "Incomplete plan", err})
                 res.json(plan)
         })
     },
 
     // Create a new Event/Plan
     create: (req, res) => {
-        var newUserPlan
+        var newUserPlan = ''
         Plan.create(req.body, (err, plan) => {
             if(err) return res.json({success: false, code: err.code})
             // event/plan is created
@@ -41,7 +41,7 @@ module.exports = {
 
     // Delete an existing Event/Plan
     destroy: (req, res) => {
-        Plan.findByIdAndRemove(req.params.id, (err, plan) => {
+        Plan.findByIdAndRemove(req.params.id, (err, deletedPlan) => {
             res.json({success: true, message: "Event deleted.", plan})
         })
     },
