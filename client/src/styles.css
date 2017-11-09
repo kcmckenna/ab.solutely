@@ -1,6 +1,8 @@
 body {
 	font-family: 'Megrim', cursive;
-	padding: 20px;
+	text-align: center;
+	padding: 10px;
+	background-color: rgb(218, 218, 218);
 }
 
 a, button {
@@ -8,29 +10,36 @@ a, button {
 	cursor: pointer;
 }
 
+
 .AB {
 	font-family: 'Megrim', cursive;
+	text-align: center;
 	color: rgb(82, 108, 124);
 	font-size: 72px;
 }
 
 .period {
 	font-family: 'Megrim', cursive;
+	text-align: center;
 	color: rgb(166, 186, 197);
-	font-size: 172px;
+	font-size: 100px;
 }
 
 .solutely {
 	font-family: 'Megrim', cursive;
+	text-align: center;
 	color: rgb(72, 179, 236);
 	font-size: 72px;
 }
 
 .NavBar {
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
 	margin-bottom: 20px;
 	color: rgb(72, 179, 236);
 }
 
 div {
 	font-family: 'Raleway', sans-serif;
+	color: rgb(82, 108, 124);
 }

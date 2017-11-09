@@ -12,8 +12,16 @@ const ShowPlans = (props) => {
 		<div className='ShowPlans'>
 			<h1>List of Plans</h1>
 			<h2>Welcome {props.currentUser.name}</h2>
-			<Link to="./TypeA">TYPE A</Link>
-			<Link to="./TypeB">TYPE B</Link>
+			<h3> this is where the list of all plans should be viewed </h3>
+			<ul>
+				<li></li>
+			</ul>
+			<RaisedButton 
+			backgroundColor="#a6bac5" 
+			label="Make Plans"
+			containerElement={<Link to="/makeplan" />} 
+			linkButton={true}  
+			/>
 		</div>
 	)
 }

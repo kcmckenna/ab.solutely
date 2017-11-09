@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -58,6 +59,7 @@ class EditProfile extends React.Component {
 					<div>Email</div><input type="text" placeholder="Email" name="email" defaultValue={email} />
 					<div>Password</div><input type="password" placeholder="Password" name="password" defaultValue={password} />
 					<button>Update</button>
+					<Link to="/delete">Delete</Link>
 				</form>
 			</div>
 		)

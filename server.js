@@ -13,7 +13,7 @@ const
 	clientId = process.env.YELP_CLIENT_ID
 	clientSecret = process.env.YELP_API_KEY
 
-
+///////////////////// YELP API ////////////////////////////
 var theToken = null
 	
 const token = yelp.accessToken(clientId, clientSecret).then(response => {
@@ -48,7 +48,9 @@ app.get('/api-autocomplete/:term', (req, res) => {
 		console.log(e);
 	  });
 })
+/////////////////////////////////////////////////////////
 
+///////////////////// CONNECT TO DB /////////////////////
 mongoose.connect(MONGODB_URI, (err) => {
 	console.log(err || `Connected to MongoDB.`)
 })
@@ -65,7 +67,9 @@ app.get('/api', (req, res) => {
 app.use('/api/users', usersRoutes)
 app.use('/api/plans', plansRoutes)
 
-// Below only applies to heroku once it's finished deploying and builds app on backend
+// Below only applies to heroku once it's 
+// finished deploying and builds app on backend
+
 app.use('*', (req, res) => {
 	res.sendFile(`${__dirname}/client/build/index.html`)
 })

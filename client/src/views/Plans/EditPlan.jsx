@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import clientAuth from '../../clientAuth';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
@@ -61,6 +62,7 @@ class EditPlan extends React.Component {
                     <input type="text" placeholder="Date Start" name="datestart" value={dateStart} />
                     <input type="text" placeholder="Date End" name="dateend" value={dateEnd} />
 					<button>Edit the Event</button>
+					<Link to="/deleteplan">Delete Plan</Link>
 				</form>
 			</div>
 		)
