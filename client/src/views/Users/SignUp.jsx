@@ -28,7 +28,13 @@ class SignUp extends React.Component {
 		
 		evt.preventDefault()
 		clientAuth.signUp(this.state.fields).then(user => {
-			this.setState({ fields: { name: '', email: '', password: '' } })
+			this.setState({ 
+				fields: { 
+					name: '', 
+					email: '', 
+					password: '' 
+				} 
+			})
 			if(user) {
 				this.props.onSignUpSuccess(user)
 				this.props.history.push('/')

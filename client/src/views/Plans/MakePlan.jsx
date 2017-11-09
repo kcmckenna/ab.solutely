@@ -30,7 +30,11 @@ class MakePlan extends React.Component {
 
 	onFormSubmit(evt) {
 		evt.preventDefault()
-		clientAuth.signUp(this.state.fields).then(user => {
+		axios({
+			method: 'post',
+			url: '/api/plans',
+			data: this.state.fields
+		}).then((plan) => {
             this.setState({ 
                 fields: { 
 					title: '', 
@@ -41,9 +45,9 @@ class MakePlan extends React.Component {
                     dateEnd: ''
                 } 
             })
-			if(user) {
-				// this.props.onSignUpSuccess(user)
-				// this.props.history.push('/')
+			if(plan) {
+				console.log(plan)
+				this.props.history.push('/profile')
 			}
 		})
 	}
@@ -56,10 +60,10 @@ class MakePlan extends React.Component {
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
 					<input type="text" placeholder="Title" name="title" value={title} />
 					<input type="text" placeholder="Place" name="place" value={place} />
-					<input type="number" placeholder="Time Start" name="timeStart" value={timeStart} />
-                    <input type="number" placeholder="Time End" name="timeEnd" value={timeEnd} />
-                    <input type="number" placeholder="Date Start" name="dateStart" value={dateStart} />
-                    <input type="number" placeholder="Date End" name="dateEnd" value={dateEnd} />
+					<input type="time" placeholder="Time Start" name="timeStart" value={timeStart} />
+                    <input type="time" placeholder="Time End" name="timeEnd" value={timeEnd} />
+                    <input type="date" placeholder="Date Start" name="dateStart" value={dateStart} />
+                    <input type="date" placeholder="Date End" name="dateEnd" value={dateEnd} />
 					<button>Make Event</button>
 				</form>
 			</div>

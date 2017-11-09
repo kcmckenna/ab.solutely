@@ -1,6 +1,6 @@
 const
     mongoose = require('mongoose'),
-    bcrypt = require('bcrypt-nodejs'),
+    // bcrypt = require('bcrypt-nodejs'),
     planSchema = new mongoose.Schema({
         title: { type: String },
         place: { type: String },

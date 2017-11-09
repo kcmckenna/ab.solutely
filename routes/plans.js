@@ -13,6 +13,7 @@ plansRouter.post('/authenticate', plansCtrl.authenticate)
 plansRouter.use(verifyToken)
 plansRouter.route('/:id')
     .get(plansCtrl.show)
+   
     .patch(plansCtrl.update)
     .delete(plansCtrl.destroy)
 

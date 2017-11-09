@@ -52,7 +52,6 @@ function logOut() {
 	return true
 }
 
-
 export default {
 	getCurrentUser,
 	logIn,
