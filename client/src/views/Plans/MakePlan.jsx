@@ -1,6 +1,7 @@
 import React from 'react';
 import clientAuth from '../../clientAuth';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
@@ -73,13 +74,14 @@ class MakePlan extends React.Component {
 		console.log()
 		return (
 			<Paper zDepth={2}>
+			<br />
 			<div className='MakePlan'>
+				<br/>
 				<h1>Create Event</h1>
+				<br/>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-					
-					<div>Title</div><input type="text" placeholder="" name="title" value={title} />
+					<div>Name of Event</div><input type="text" placeholder="" name="title" value={title} />
 					<br />
-					{/* <div>Place</div><input type="text" placeholder="" name="place" value={place} /> */}
 					<AutoComplete
 						dataSource={this.state.suggestions}
 						name="place"
@@ -88,18 +90,41 @@ class MakePlan extends React.Component {
 						filter={() => true}
 					/>
 					<br />
-					<div>Start @</div><input type="time" placeholder="Time Start" name="timeStart" value={timeStart} />
+					<div>Start @</div>
+					<input type="time" placeholder="Time Start" name="timeStart" value={timeStart} />
 					<br />
-                    <div>End @</div> <input type="time" placeholder="Time End" name="timeEnd" value={timeEnd} />
+                    <div>End @</div> 
+					<input type="time" placeholder="Time End" name="timeEnd" value={timeEnd} />
 					<br />
-                    <div>Date</div><input type="date" placeholder="Date Start" name="dateStart" value={dateStart} />
+                    <div>Date</div>
+					<input type="date" placeholder="Date Start" name="dateStart" value={dateStart} />
 					<br />
 					<div>
 						<br/>
-						<button>Make Event</button>
+							{/* Need this to submit with enter key... */}
+							<button style={{display: 'none'}}>Make the Plan</button>
 						<br/>
 					</div>
+					<br/>
+					<RaisedButton 
+						className="makePlanBtn"
+						backgroundColor="#449EE3" 
+						label="Make Plan"
+						containerElement={<Link to="/plans" />} 
+						linkButton={true}  
+						onClick={this.onFormSubmit.bind(this)}
+					/>
+					<Divider />
 					<br />
+					<RaisedButton 
+						className="typeB"
+						backgroundColor="#e04242" 
+						label="All Plans"
+						containerElement={<Link to="/plans" />} 
+						linkButton={true}  
+					/>
+					<Divider />
+					<br/>
 				</form>
 			</div>
 			</Paper>

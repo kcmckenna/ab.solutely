@@ -19,6 +19,8 @@ class EditPlan extends React.Component {
             dateEnd: ''
         }
 	}
+	
+////////////// FUNCTIONS ///////////////////
 
 	onInputChange(evt) {
 		this.setState({
@@ -70,11 +72,12 @@ class EditPlan extends React.Component {
 						linkButton={true}  
 					/>
 				</form>
+				<Divider />
+					<br/>
 			</div>
 			</Paper>
 		)
 	}
 }
-
 
 export default EditPlan;

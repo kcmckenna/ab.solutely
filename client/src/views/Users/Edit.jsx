@@ -15,6 +15,8 @@ class EditProfile extends React.Component {
 			password: ''}
 	}
 
+////////////// FUNCTIONS ///////////////////
+
 	onInputChange(evt) {
 		this.setState({
 			fields: {
@@ -56,24 +58,43 @@ class EditProfile extends React.Component {
 		const { name, email, password } = this.state.fields
 		return (
 			<Paper zDepth={2}>
+			<br />
 			<div className='EditProfile'>
+				<br/>
 				<h2>Edit Profile</h2>
+				<br/>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-                    <div>Name</div><input type="text" placeholder="Name" name="name" defaultValue={name} /> 
-					<div>Email</div><input type="text" placeholder="Email" name="email" defaultValue={email} />
-					<div>Password</div><input type="password" placeholder="Password" name="password" defaultValue={password} />
+                    <div>Name</div>
+					<input type="text" placeholder="Name" name="name" defaultValue={name} /> 
+					<div>Email</div>
+					<input type="text" placeholder="Email" name="email" defaultValue={email} />
+					<div>Password</div>
+					<input type="password" placeholder="Password" name="password" defaultValue={password} />
 					<br/>
 					<div>
-						<button>Update</button>
+						<button style={{display: 'none'}}>Update</button>
 					</div>
 					<br/>
-					<Divider />
 					<RaisedButton 
-						backgroundColor="#800000" 
+						className="editBtn"
+						backgroundColor="#449EE3" 
+						label="Update Account"
+						containerElement={<Link to="/profile" />} 
+						linkButton={true}  
+						onClick={this.onFormSubmit.bind(this)}
+					/>	
+					<br/>
+					<Divider />
+					<br/>
+					<RaisedButton 
+						className="deleteBtn"
+						backgroundColor="#e56161" 
 						label="Delete Account"
 						containerElement={<Link to="/delete" />} 
 						linkButton={true}  
 					/>
+					<br/>
+					<Divider />
 					<br/>
 				</form>
 			</div>

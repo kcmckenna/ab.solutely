@@ -3,13 +3,8 @@ body {
 	text-align: center;
 	padding: 10px;
 	background-color: rgb(218, 218, 218);
+	text-shadow: 2px 2px 3px rgba(170, 211, 237, 0.69);
 }
-
-a, button {
-	margin: 0 5px;
-	cursor: pointer;
-}
-
 
 .AB {
 	font-family: 'Megrim', cursive;
@@ -39,11 +34,100 @@ a, button {
 	color: rgb(72, 179, 236);
 }
 
+input:focus, textarea:focus {
+	background   : rgba(33, 177, 221, 0.541);
+	border-radius: 5px;
+	outline      : none;
+	width: 250px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	text-align: center;
+}
+
+input, textarea {
+	background   : rgba(189, 189, 189, 0.1);
+	border-radius: 5px;
+	outline      : none;
+	width: 250px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	text-align: center;
+}
+
+a, button {
+	margin: 0 5px;
+	cursor: pointer;
+	width: 250px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 20px;
+	text-align: center;
+}
+
 li {
 	list-style: none;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	font-size: 40px;
 }
 
 div {
 	font-family: 'Raleway', sans-serif;
 	color: rgb(82, 108, 124);
+}
+
+h2 {
+	font-size: 45px;
+	text-shadow: 2px 2px 3px rgba(170, 211, 237, 0.69);
+}
+
+.planitem {
+	margin-right: 20px;
+}
+
+.loginBtn {
+	font-family: 'Raleway', sans-serif;
+	width: 250px;
+}
+
+.typeA {
+	font-family: 'Megrim';
+	width: 250px;
+}
+
+.typeB {
+	font-family: 'Megrim';
+	width: 250px;
+}
+
+.editProBtn {
+	font-family: 'Raleway', sans-serif;
+	width: 250px;
+}
+
+.makePlanBtn {
+	font-family: 'Raleway', sans-serif;
+	width: 250px;
+}
+
+.editPlanBtn{
+	font-family: 'Raleway', sans-serif;
+	width: 250px;
+}
+
+.deletePlanBtn {
+	margin-top: 10px;
+	margin-bottom: 25px;
+	font-family: 'Raleway', sans-serif;
+	width: 125px;
+	text-align: center;
+}
+
+.editBtn{
+	font-family: 'Raleway', sans-serif;
+	width: 250px;
+}
+
+.deleteBtn {
+	font-family: 'Raleway', sans-serif;
+	width: 250px;
 }

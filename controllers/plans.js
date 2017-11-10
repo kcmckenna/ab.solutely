@@ -65,5 +65,4 @@ module.exports = {
             res.json({success: true, message: "Token Attached.", token})
         })
     }
-
 }

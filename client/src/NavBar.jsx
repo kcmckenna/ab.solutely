@@ -45,7 +45,7 @@ const NavBar = (props) => {
 								containerElement={<Link to="/profile" />} 
 								linkButton={true}  
 							/>
-							<RaisedButton 
+							{/* <RaisedButton 
 								backgroundColor="#a6bac5" 
 								label="Plans"
 								containerElement={<Link to="/plans" />} 
@@ -56,7 +56,7 @@ const NavBar = (props) => {
 								label="Make Plans"
 								containerElement={<Link to="/makeplan" />} 
 								linkButton={true}  
-							/>
+							/> */}
 							<RaisedButton 
 								backgroundColor="#a6bac5" 
 								label="Log Out"
