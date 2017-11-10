@@ -5,7 +5,7 @@ const
 	logger = require('morgan'),
 	bodyParser = require('body-parser'),
 	mongoose = require('mongoose'),
-	MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/react-express-jwt',
+	MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/absolutely',
 	PORT = process.env.PORT || 3001,
 	usersRoutes = require('./routes/users.js'),
 	plansRoutes = require('./routes/plans'),
@@ -19,33 +19,32 @@ var theToken = null
 const token = yelp.accessToken(clientId, clientSecret).then(response => {
 	 console.log(response.jsonBody.access_token)
 	 theToken = response.jsonBody.access_token
-   }).catch(e => {
-	 console.log(e)
-   })
+		}).catch(e => {
+			console.log(e)
+		})
    
-
-app.get('/apitest/:term/:city', (req, res) => {
+app.get('/yelp/:term/:city', (req, res) => {
 	const client = yelp.client(theToken)
 	client.search({
 		term: req.params.term,
 		location: req.params.city
 	  }).then(response => {
-		console.log(response.jsonBody.businesses)
-		res.json(response.jsonBody)
-	  }).catch(e => {
-		console.log(e);
+			console.log(response.jsonBody.businesses)
+			res.json(response.jsonBody)
+			}).catch(e => {
+			console.log(e);
 	  });
 })
 
-app.get('/api-autocomplete/:term', (req, res) => {
+app.get('/yelp-autocomplete/:term', (req, res) => {
 	const client = yelp.client(theToken)
 	client.autocomplete({
 		text: req.params.term
 	  }).then(response => {
-		console.log(response.jsonBody.terms[0].text);
-		res.json(response.jsonBody)
-	  }).catch(e => {
-		console.log(e);
+			console.log(response.jsonBody.terms[0].text);
+			res.json(response.jsonBody)
+			}).catch(e => {
+			console.log(e);
 	  });
 })
 /////////////////////////////////////////////////////////

@@ -39,6 +39,10 @@ a, button {
 	color: rgb(72, 179, 236);
 }
 
+li {
+	list-style: none;
+}
+
 div {
 	font-family: 'Raleway', sans-serif;
 	color: rgb(82, 108, 124);

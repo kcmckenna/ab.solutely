@@ -9,29 +9,31 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 const Show = (props) => {
 	return (
+	<Paper zDepth={2}>
 		<div className='Show'>
 			<h2>Welcome {props.currentUser.name}</h2>
 			<RaisedButton 
-			backgroundColor="#449EE3" 
-			label="Edit"
-			containerElement={<Link to="/edit" />} 
-			linkButton={true}  
+				backgroundColor="#449EE3" 
+				label="Edit Account"
+				containerElement={<Link to="/edit" />} 
+				linkButton={true}  
 			/>
 			<h3>{props.currentUser.about}</h3>
 			<h4>What type are you feeling today?</h4>
 			<RaisedButton 
-			backgroundColor="#449EE3" 
-			label="Type A"
-			containerElement={<Link to="/makeplan" />} 
-			linkButton={true}  
+				backgroundColor="#449EE3" 
+				label="Type A"
+				containerElement={<Link to="/makeplan" />} 
+				linkButton={true}  
 			/>
 			<RaisedButton 
-			backgroundColor="#449EE3" 
-			label="Type B"
-			containerElement={<Link to="/plans" />} 
-			linkButton={true}  
+				backgroundColor="#449EE3" 
+				label="Type B"
+				containerElement={<Link to="/plans" />} 
+				linkButton={true}  
 			/>
 		</div>
+	</Paper>
 	)
 }
 

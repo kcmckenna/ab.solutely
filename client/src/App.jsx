@@ -112,9 +112,10 @@ class App extends React.Component {
 								: <Redirect to="/login" />
 						}} />
 
-						<Route path="/makeplan" render={() => {
+						<Route path="/makeplan" render={(props) => {
 							return currentUser
 								? <MakePlan 
+									{...props} 
 									currentUser={currentUser} />
 								: <Redirect to="/login" />
 						}} />

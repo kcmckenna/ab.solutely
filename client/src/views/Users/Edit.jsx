@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class EditProfile extends React.Component {
 
 	state = {
-		fields: { name: '', email: '', password: ''}
+		fields: { name: this.props.currentUser.name, 
+			email: this.props.currentUser.email, 
+			password: ''}
 	}
-	
 
 	onInputChange(evt) {
 		this.setState({
@@ -52,16 +55,29 @@ class EditProfile extends React.Component {
 	render() {
 		const { name, email, password } = this.state.fields
 		return (
+			<Paper zDepth={2}>
 			<div className='EditProfile'>
 				<h2>Edit Profile</h2>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
                     <div>Name</div><input type="text" placeholder="Name" name="name" defaultValue={name} /> 
 					<div>Email</div><input type="text" placeholder="Email" name="email" defaultValue={email} />
 					<div>Password</div><input type="password" placeholder="Password" name="password" defaultValue={password} />
-					<button>Update</button>
-					<Link to="/delete">Delete</Link>
+					<br/>
+					<div>
+						<button>Update</button>
+					</div>
+					<br/>
+					<Divider />
+					<RaisedButton 
+						backgroundColor="#800000" 
+						label="Delete Account"
+						containerElement={<Link to="/delete" />} 
+						linkButton={true}  
+					/>
+					<br/>
 				</form>
 			</div>
+			</Paper>
 		)
 	}
 }

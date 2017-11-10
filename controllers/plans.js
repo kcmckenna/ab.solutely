@@ -4,11 +4,11 @@ const signToken = require('../serverAuth.js').signToken
 module.exports = {
     // List all Plans
     index: (req, res) => {
-        Plan.find({user: req.params.id}.populate('user').exec((err, plans) => {
+        Plan.find({user: req.params.id}).populate('user').exec((err, plans) => {
             if (err) return res.json({success: false, message: "No Plans!", err})
             res.json(plans)
         })
-    )},
+    },
 
     // Get one Plan
     show: (req, res) => {
@@ -38,11 +38,11 @@ module.exports = {
 
     // Update an existing Plan
     update: (req, res) => {
-        Plan.findById(req.params.id, (err, plan) => {
+        Plan.findById(req.params.id, (err, updatedPlan) => {
             Object.assign(plan, req.body)
             plan.save((err, updatedPlan) => {
                 if(err) return res.json({success: false, message: "Plan not updated"})
-                res.json({success: true, message: "Plans have changed!", plan})
+                res.json({success: true, message: "Plans have changed!", updatedPlan})
             })
         })
     },
@@ -51,7 +51,7 @@ module.exports = {
     destroy: (req, res) => {
         Plan.findByIdAndRemove(req.params.id, (err, deletedPlan) => {
             if(err) return res.json({success: false, message: "Plan not deleted"})
-            res.json({success: true, message: "Plans are cancelled!"})
+            res.json({success: true, message: "Plans are cancelled!", deletedPlan: deletedPlan})
         })
     },
 

@@ -1,10 +1,12 @@
 import React from 'react';
 import clientAuth from '../../clientAuth';
+import { Link } from 'react-router-dom';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import AutoComplete from 'material-ui/AutoComplete';
 
 // Sign up form behaves almost identically to log in form. 
 // We could create a flexible Form component to use for both actions, 
@@ -25,7 +27,6 @@ class SignUp extends React.Component {
 	}
 
 	onFormSubmit(evt) {
-		
 		evt.preventDefault()
 		clientAuth.signUp(this.state.fields).then(user => {
 			this.setState({ 
@@ -50,14 +51,21 @@ class SignUp extends React.Component {
 					<h2>Sign Up</h2>
 					<Divider />	
 						<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
-							<input type="text" placeholder="Name" name="name" value={name} />
+							<div>Name</div><input type="text" placeholder="" name="name" value={name} />
 							<Divider />
-							<input type="text" placeholder="Email" name="email" value={email} />	
+							<div>Email</div><input type="text" placeholder="" name="email" value={email} />	
 							<Divider />
-							<input type="password" placeholder="Password" name="password" value={password} />
+							<div>Password</div><input type="password" placeholder="" name="password" value={password} />
 							<Divider />
-						<RaisedButton backgroundColor="#449EE3" label="SIGN UP"  />
-						<button>Join Now</button>
+						<RaisedButton 
+							backgroundColor="#449EE3" 
+							label="Join Now"
+							containerElement={<Link to="/login" />} 
+							linkButton={true}  
+							onClick={this.onFormSubmit.bind(this)}
+						/>	
+						{/* Need this to submit with enter key... */}
+						<button style={{display: 'none'}}>Join Now</button>
 					<Divider />
 					</form>
 				</div>
@@ -67,3 +75,4 @@ class SignUp extends React.Component {
 }
 
 export default SignUp
+

@@ -52,6 +52,7 @@ class EditPlan extends React.Component {
 	render() {
 		const { title, place, timeStart, timeEnd, dateStart, dateEnd } = this.state.fields
 		return (
+			<Paper zDepth={2}>
 			<div className='EditPlan'>
 				<h1>Edit an Event</h1>
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
@@ -62,9 +63,15 @@ class EditPlan extends React.Component {
                     <input type="text" placeholder="Date Start" name="datestart" value={dateStart} />
                     <input type="text" placeholder="Date End" name="dateend" value={dateEnd} />
 					<button>Edit the Event</button>
-					<Link to="/deleteplan">Delete Plan</Link>
+					<RaisedButton 
+						backgroundColor="#a6bac5" 
+						label="Delete Plan"
+						containerElement={<Link to="/deleteplan" />} 
+						linkButton={true}  
+					/>
 				</form>
 			</div>
+			</Paper>
 		)
 	}
 }
