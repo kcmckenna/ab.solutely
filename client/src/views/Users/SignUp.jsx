@@ -47,6 +47,7 @@ class SignUp extends React.Component {
 		const { name, email, password } = this.state.fields
 		return (
 			<Paper zDepth={2}>
+			<br/>
 			 	<div className='SignUp'>
 					<h2>Sign Up</h2>
 					<Divider />	
@@ -57,7 +58,9 @@ class SignUp extends React.Component {
 							<Divider />
 							<div>Password</div><input type="password" placeholder="" name="password" value={password} />
 							<Divider />
-						<RaisedButton 
+							<br/>
+						<RaisedButton
+							className="loginBtn" 
 							backgroundColor="#449EE3" 
 							label="Join Now"
 							containerElement={<Link to="/login" />} 
@@ -67,7 +70,9 @@ class SignUp extends React.Component {
 						{/* Need this to submit with enter key... */}
 						<button style={{display: 'none'}}>Join Now</button>
 					<Divider />
+					<br/>
 					</form>
+					<br/>
 				</div>
 			</Paper>
 		)

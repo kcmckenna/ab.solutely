@@ -10,12 +10,27 @@ import RaisedButton from 'material-ui/RaisedButton';
 class EditProfile extends React.Component {
 
 	state = {
-		fields: { name: this.props.currentUser.name, 
-			email: this.props.currentUser.email, 
-			password: ''}
+		fields: { name: '', 
+			email: '',
+			password: ''},
+		loaded: false,
+		
 	}
 
 ////////////// FUNCTIONS ///////////////////
+
+	componentDidMount() {
+        axios({ method: 'get', url: "/api/users" })
+        .then((res) => {
+            // console.log(res)
+			this.setState({
+				...this.state,
+				user: res.data,
+				loaded: true
+			})
+        })
+    }
+
 
 	onInputChange(evt) {
 		this.setState({
@@ -52,10 +67,17 @@ class EditProfile extends React.Component {
 				this.props.history.push('/profile')
             }
         })
-    }
+	}
+	
+
 	
 	render() {
+		console.log(this.props)
 		const { name, email, password } = this.state.fields
+		const { loaded } = this.state
+        // console.log(this.props)
+        if(!loaded) return <div>Loading...</div>
+
 		return (
 			<Paper zDepth={2}>
 			<br />

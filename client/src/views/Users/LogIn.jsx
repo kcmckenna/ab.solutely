@@ -43,13 +43,15 @@ class LogIn extends React.Component {
 			<div className='LogIn'>
 				<br/>
 				<h2>Log In</h2>
-				<br/>
+				<Divider />
 				<form onChange={this.onInputChange.bind(this)} onSubmit={this.onFormSubmit.bind(this)}>
+				<Divider />
 					<div>Email</div>
 					<input type="text" placeholder="" name="email" value={email} />
+					<Divider />
 					<div>Password</div>
 					<input type="password" placeholder="" name="password" value={password} />
-					<br/>
+					<Divider />
 					<RaisedButton
 						className="loginBtn"
 						style={{marginTop: 20}} 
