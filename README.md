@@ -1,6 +1,6 @@
 # ab.solutely
 
-![ab-logo](/Users/kevincmckenna/Desktop/WDI - Final Project /Screen Shot 2017-11-05 at 11.20.07 PM.png)
+![ab-logo](/Users/kevincmckenna/WDI_51/w12/WDI-Final-Project/ab-solutely/client/src/AB_logo.png)
 ---
 
 -  [GitHub](https://github.com/kcmckenna/ab.solutely)
