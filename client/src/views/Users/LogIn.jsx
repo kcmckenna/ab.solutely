@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import clientAuth from '../../clientAuth';
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
+// import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import {fullWhite} from 'material-ui/styles/colors';
-import ActionAndroid from 'material-ui/svg-icons/action/android';
-import FontIcon from 'material-ui/FontIcon';
+// import {fullWhite} from 'material-ui/styles/colors';
+// import ActionAndroid from 'material-ui/svg-icons/action/android';
+// import FontIcon from 'material-ui/FontIcon';
 
 class LogIn extends React.Component {
 	state = {

@@ -3,12 +3,12 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import clientAuth from './clientAuth.js';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import AppBar from 'material-ui/AppBar';
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+// import getMuiTheme from 'material-ui/styles/getMuiTheme';
+// import AppBar from 'material-ui/AppBar';
+// import Divider from 'material-ui/Divider';
+// import Paper from 'material-ui/Paper';
+// import TextField from 'material-ui/TextField';
+// import RaisedButton from 'material-ui/RaisedButton';
 //////////////// JOINING ////////////////////
 import NavBar from './NavBar.jsx';
 import Home from './views/Home.jsx';
@@ -20,8 +20,8 @@ import Show from './views/Users/Show.jsx';
 import EditProfile from './views/Users/Edit.jsx';
 import DeleteProfile from './views/Users/Delete.jsx';
 //////////////// TYPES ////////////////////
-import TypeA from './views/TypeA.jsx';
-import TypeB from './views/TypeB.jsx';
+// import TypeA from './views/TypeA.jsx';
+// import TypeB from './views/TypeB.jsx';
 //////////////// EVENTS ////////////////////
 import MakePlan from './views/Plans/MakePlan.jsx';
 import ShowPlans from './views/Plans/ShowPlans.jsx';

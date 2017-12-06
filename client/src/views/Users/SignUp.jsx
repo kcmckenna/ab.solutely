@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
+// import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import AutoComplete from 'material-ui/AutoComplete';
+// import AutoComplete from 'material-ui/AutoComplete';
 
 // Sign up form behaves almost identically to log in form. 
 // We could create a flexible Form component to use for both actions, 

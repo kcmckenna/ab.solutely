@@ -1,17 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
-import FontIcon from 'material-ui/FontIcon';
-import {blue500, red500, greenA200} from 'material-ui/styles/colors';
-import IconButton from 'material-ui/IconButton';
-import ActionHome from 'material-ui/svg-icons/action/home';
+// import Divider from 'material-ui/Divider';
+// import Paper from 'material-ui/Paper';
+// import TextField from 'material-ui/TextField';
+// import FontIcon from 'material-ui/FontIcon';
+// import {blue500, red500, greenA200} from 'material-ui/styles/colors';
+// import IconButton from 'material-ui/IconButton';
+// import ActionHome from 'material-ui/svg-icons/action/home';
 
 
 const NavBar = (props) => {

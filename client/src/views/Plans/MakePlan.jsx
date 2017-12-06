@@ -1,11 +1,9 @@
 import React from 'react';
-import clientAuth from '../../clientAuth';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import AutoComplete from 'material-ui/AutoComplete';
 

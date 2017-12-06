@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+// import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -29,8 +29,7 @@ class EditProfile extends React.Component {
 				loaded: true
 			})
         })
-    }
-
+	}
 
 	onInputChange(evt) {
 		this.setState({
@@ -68,8 +67,6 @@ class EditProfile extends React.Component {
             }
         })
 	}
-	
-
 	
 	render() {
 		console.log(this.props)

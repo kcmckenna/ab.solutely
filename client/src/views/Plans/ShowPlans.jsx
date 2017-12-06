@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import clientAuth from '../../clientAuth';
+// import clientAuth from '../../clientAuth';
 ////////////// MATERIAL-UI IMPORTS ///////////////////
 import Divider from 'material-ui/Divider';
 import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
+// import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
 class ShowPlans extends React.Component {
@@ -24,7 +24,7 @@ class ShowPlans extends React.Component {
 			const deletePlan = res.data.deletedPlan
 			this.setState({
 				plans: this.state.plans.filter(deletePlan => {
-					return deletePlan._id != plan._id
+					return deletePlan._id !== plan._id
 				})
 			})
 		})
