@@ -31,7 +31,7 @@ img {
 .solutely {
 	font-family: 'Megrim', cursive;
 	text-align: center;
-	color: rgb(72, 179, 236);
+	color: rgb(96, 176, 244);
 	font-size: 32px;
 }
 }
@@ -53,7 +53,7 @@ img {
 .solutely {
 	font-family: 'Megrim', cursive;
 	text-align: center;
-	color: rgb(72, 179, 236);
+	color: rgb(96, 176, 244);
 	font-size: 72px;
 }
 
@@ -61,7 +61,7 @@ img {
 	font-family: 'Raleway', sans-serif;
 	text-align: center;
 	margin-bottom: 20px;
-	color: rgb(72, 179, 236);
+	color: rgb(96, 176, 244);
 }
 
 input:focus, textarea:focus {
@@ -163,7 +163,7 @@ h2 {
 }
 
 .homeBtn {
-	color: rgb(72, 179, 236);
+	color: rgb(96, 176, 244);
 	width: 125px;
 	margin-right: 25px;
 }
