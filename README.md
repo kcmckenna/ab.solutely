@@ -5,7 +5,6 @@
 
 -  [GitHub](https://github.com/kcmckenna/ab.solutely)
 
-
 -  [Trello](https://trello.com/b/jqb1CxIT/wdi-final-project-absolutley)
 
 -  [Heroku](https://dashboard.heroku.com/apps/nameless-sierra-12965)
@@ -39,6 +38,7 @@
 - Express
 - Yelp API
 - Mongoose
+- Heroku
 
 
 
